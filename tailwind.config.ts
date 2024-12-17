@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        bodoni: 'var(--font-bodoni-moda)',
+        nunito: 'var(--font-nunito)',
+        quicksand: 'var(--font-quicksand)',
+      },
     },
   },
   plugins: [],
