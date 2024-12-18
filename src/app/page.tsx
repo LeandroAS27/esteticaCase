@@ -6,6 +6,7 @@ import Benefits from "./components/benefits";
 import Footer from "./components/footer";
 import Contact from "./components/contact";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
+import WhatsappButton from "./components/WhatsappButton";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <footer>
           <Footer/>
       </footer>
+      <WhatsappButton/>
     </>
   );
 }

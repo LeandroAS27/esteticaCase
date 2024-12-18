@@ -1,9 +1,9 @@
 const About = () => {
     return(
         <>
-            <section className="min-h-screen w-full bg-[#ECEBDE] flex flex-col items-center py-8">
+            <section id="sobre" className="min-h-screen w-full bg-[#ECEBDE] flex flex-col justify-center items-center py-8">
                     <h1 className="text-[#C5A882] font-bodoni text-4xl font-bold py-8">Sobre nós</h1>
-                <div className="mx-4">
+                <div className="mx-4 max-w-7xl lg:mx-auto flex flex-col lg:justify-start lg:text-left">
                     <p className="text-[#4A4A4A] mb-4 font-nunito">
                         No <strong>Estetica CaseOne</strong>, acreditamos que o cuidado com a beleza vai além da estética:
                         é um momento de autocuidado, confiança e renovação. 

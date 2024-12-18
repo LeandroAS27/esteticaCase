@@ -1,23 +1,23 @@
 const Navigation = () => {
     return(
         <>
-            <header className="w-full h-24 bg-[#A8CABA] flex justify-center items-center">
+            <header id="home" className="w-full h-24 bg-[#A8CABA] flex justify-center items-center">
                 <nav>
-                    <ul className="flex justify-center items-center gap-4 text-[#4A4A4A] font-bodoni text-md font-bold">
+                    <ul className="flex flex-wrap justify-center sm:justify-between items-center gap-4 text-[#4A4A4A] font-bodoni text-md font-bold">
                         <li>
-                            <a href="">Home</a>
+                            <a href="#home" className="hover:text-white">Home</a>
                         </li>
                         <li>
-                            <a href="">Serviços</a>
+                            <a href="#serviços" className="hover:text-white transition duration-300">Serviços</a>
                         </li>
                         <li>
-                            <a href="">Sobre</a>
+                            <a href="#sobre" className="hover:text-white transition duration-300">Sobre</a>
                         </li>
                         <li>
-                            <a href="">Depoimentos</a>
+                            <a href="#depoimentos" className="hover:text-white transition duration-300">Depoimentos</a>
                         </li>
                         <li>
-                            <a href="">Contato</a>
+                            <a href="#contato" className="hover:text-white transition duration-300">Contato</a>
                         </li>
                     </ul>
                 </nav>
