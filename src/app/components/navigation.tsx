@@ -23,7 +23,7 @@ const Navigation = () => {
                     </ul>
                 </nav>
                 <div>
-                    <p className="font-nunito text-gray-100">Aesthetic & Wellness Spa</p>
+                    <p className="font-nunito text-white">Aesthetic & Wellness Spa</p>
                 </div>
             </header>
         </>
