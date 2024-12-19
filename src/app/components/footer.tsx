@@ -1,17 +1,20 @@
 import { FaInstagram, FaYoutube, FaTiktok, FaTwitter, FaFacebook } from "react-icons/fa";
+import Image from "next/image";
+
+import addressIcon from '../../../public/icons8-marcador-96.png';
 
 const Footer = () => {
 
     return(
         <>
-            <footer className="w-full h-94 bg-[#A8CABA] p-6 flex flex-col items-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 sm:items-center sm:justify-center gap-8 text-center w-full max-w-screen-lg">
-                    <div className="flex flex-col sm:flex-row gap-2">
-                        <a href="#home" className="hover:underline text-[#4A4A4A]">Home</a>
-                        <a href="#serviços" className="hover:underline text-[#4A4A4A]">Serviços</a>
-                        <a href="#sobre" className="hover:underline text-[#4A4A4A]">Sobre nós</a>
-                        <a href="#depoimentos" className="hover:underline text-[#4A4A4A]">Depoimentos</a>
-                        <a href="#contato" className="hover:underline text-[#4A4A4A]">Contato</a>
+            <footer className="w-full h-94 bg-[#A8CABA] p-6 flex flex-col items-center justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-3 sm:items-center sm:justify-center gap-8 text-center w-full max-w-screen-lg">
+                    <div className="flex flex-col items-center justify-center sm:flex-row gap-2">
+                        <a href="#home" className="hover:underline text-[#4A4A4A] font-nunito">Home</a>
+                        <a href="#serviços" className="hover:underline text-[#4A4A4A] font-nunito">Serviços</a>
+                        <a href="#sobre" className="hover:underline text-[#4A4A4A] font-nunito">Sobre</a>
+                        <a href="#depoimentos" className="hover:underline text-[#4A4A4A] font-nunito">Depoimentos</a>
+                        <a href="#contato" className="hover:underline text-[#4A4A4A] font-nunito">Contato</a>
                     </div>
 
                     <div className="flex justify-center gap-4">
@@ -31,8 +34,13 @@ const Footer = () => {
                             <FaFacebook size={20} />
                         </a>
                     </div>
+
+                    <div className="flex items-center justify-center"> 
+                        <Image src={addressIcon} alt="Icone de um marcador para o endereco" width={32} height={32}/>
+                        <p className="text-[#4A4A4A] font-nunito">Av. lorem ipsulum, 123, Brasil</p>
+                    </div>
                 </div>
-                <p className="mt-6 text-[#4A4A4A]">Criado por Leandro Alves &#169; {new Date().getFullYear()}</p>
+                <p className="mt-6 text-[#4A4A4A] font-nunito">Criado por Leandro Alves &#169; {new Date().getFullYear()}</p>
             </footer>   
         </>
     )

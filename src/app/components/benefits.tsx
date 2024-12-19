@@ -10,7 +10,7 @@ const Benefits = () => {
         <>
             <section className="min-h-screen w-full bg-[#A1B5A7] flex flex-col justify-center items-center py-16">
                 <h1 className="text-[#C5A882] text-4xl mb-8 font-bodoni font-bold">Benefícios</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mx-4 max-w-7xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 mx-4 max-w-7xl">
                     {/* service 1 */}
                     <div className="flex flex-col items-center justify-center text-center">
                         <div className="w-28 h-28 rounded-full bg-blue-500 flex items-center justify-center overflow-hidden">
@@ -39,7 +39,7 @@ const Benefits = () => {
                         </p>
                     </div>
                     {/* service 3 */}
-                    <div id="depoimentos" className="flex flex-col items-center justify-center text-center">
+                    <div className="flex flex-col items-center justify-center text-center">
                         <div className="w-28 h-28 rounded-full bg-blue-500 flex items-center justify-center overflow-hidden">
                             <Image 
                             src={ambient} 
@@ -53,7 +53,7 @@ const Benefits = () => {
                         </p>
                     </div>
                     {/* service 4 */}
-                    <div className="flex flex-col items-center justify-center text-center">
+                    <div id="depoimentos" className="flex flex-col items-center justify-center text-center">
                         <div className="w-28 h-28 rounded-full bg-blue-500 flex items-center justify-center overflow-hidden">
                             <Image 
                             src={tratamento}
