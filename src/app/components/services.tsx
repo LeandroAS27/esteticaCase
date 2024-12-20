@@ -13,7 +13,7 @@ const Services = () => {
         <>
             <section id="serviços" className="w-full min-h-screen bg-[#E1D7B7] py-12 px-4 flex flex-col items-center">
                 <h1 className="text-[#C5A882] text-4xl lg:text-5xl my-4 font-bodoni font-bold">Serviços</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-4 max-w-7xl lg:items-start">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-4 max-w-7xl md:items-start lg:items-start">
                     {/* service 1 */}
                     <div className="flex flex-col items-center justify-center text-center">
                         <div className="w-24 h-24 rounded-full bg-blue-500 flex items-center justify-center overflow-hidden">

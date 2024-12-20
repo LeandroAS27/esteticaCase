@@ -9,7 +9,7 @@ const Footer = () => {
         <>
             <footer className="w-full h-94 bg-[#A8CABA] p-6 flex flex-col items-center justify-center">
                 <div className="grid grid-cols-1 sm:grid-cols-3 sm:items-center sm:justify-center gap-8 text-center w-full max-w-screen-lg">
-                    <div className="flex flex-col items-center justify-center sm:flex-row gap-2">
+                    <div className="flex flex-col items-center justify-center lg:flex-row gap-2">
                         <a 
                         href="#home" 
                         className="hover:underline text-[#4A4A4A] font-nunito" 
