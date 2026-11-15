@@ -9,13 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        creme: "#F7F1E9", texto: "#2E2A27", texto2: "#5E5650",
+        destaque: "#8A4F45", escuro: "#2F4A3F", salvia: "#DCE5DD", dourado: "#C5A882",
       },
       fontFamily: {
         bodoni: 'var(--font-bodoni-moda)',
         nunito: 'var(--font-nunito)',
-        quicksand: 'var(--font-quicksand)',
       },
     },
   },
