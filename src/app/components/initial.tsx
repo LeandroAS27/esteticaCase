@@ -1,36 +1,10 @@
-
-//images
 import Image from "next/image";
-import aesthetic from '../../../public/wallpaper2.jpg'
+import { site } from "@/config/site";
+import { waLink } from "@/lib/whatsapp";
 
-const Initial = () => {
-    return(
-        <>
-            <main className="relative flex items-center justify-center flex-col my-8 h-screen w-full">
-                <div className="absolute inset-0 z-0">
-                    <Image 
-                    src={aesthetic} 
-                    alt="aesthetic image" 
-                    layout="fill"
-                    objectFit="cover"
-                    className="object-cover w-full bg-opacity-40"/>
-                </div>
-                <div className="relative z-10 text-center flex flex-col text-white">
-                    <h1 className="font-bodoni text-4xl text-[#4A4A4A]">Wellness & Spa</h1>
-                    <span className="font-quicksand text-2xl text-[#4A4A4A]">Aesthetic & Wellness Spa</span>
-                    <a 
-                    href="https://wa.me/" 
-                    target="_blank" 
-                    className="bg-[#E7C8C3] text-[#4A4A4A] text-center font-nunito py-2 px-4 my-8 rounded-md 
-                        shadow-[0_2px_2px_#C5A882] hover:shadow-[0_4px_8px_#C5A882] 
-                        focus:outline-none "
-                    >
-                        Entre em contato
-                    </a>
-                </div>
-            </main>
-        </>
-    )
+export default function Initial() {
+  return <><section id="inicio" className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-12 pt-6 md:min-h-[75vh] md:grid-cols-2 md:gap-12 md:px-8 md:py-20">
+    <div className="order-1 aspect-[4/3] overflow-hidden rounded-2xl md:order-2 md:aspect-[4/5]"><Image src={site.profissional.foto} alt="Imagem ilustrativa de atendimento estético" width={960} height={1200} priority sizes="(max-width: 767px) 100vw, 50vw" className="h-full w-full object-cover"/></div>
+    <div className="order-2 md:order-1"><p className="mb-4 text-xs font-bold tracking-[.15em] text-destaque">{site.rotulo}</p><h1 className="font-bodoni text-4xl font-bold leading-tight text-escuro md:text-6xl">{site.titulo}</h1><p className="mt-5 max-w-xl text-lg text-texto2">{site.apoio}</p><div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"><a className="flex min-h-12 items-center justify-center rounded-md bg-destaque px-6 font-bold text-white" href={waLink("Olá! Vim pelo site e quero agendar um horário. (hero)")} data-track="hero-whatsapp" target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp</a><a className="flex min-h-12 items-center justify-center rounded-md border-2 border-destaque px-6 font-bold text-destaque" href="#servicos" data-track="hero-servicos">Ver serviços</a>{site.agendamentoUrl && <a className="flex min-h-12 items-center justify-center rounded-md border-2 border-escuro px-6 font-bold text-escuro" href={site.agendamentoUrl} data-track="hero-agenda">Agendar online</a>}</div></div>
+  </section>{site.confianca.length > 0 && <div className="bg-salvia px-5 py-4"><ul className="mx-auto flex max-w-7xl flex-wrap gap-5 font-bold text-escuro">{site.confianca.slice(0,3).filter(Boolean).map(item => <li key={item}>{item}</li>)}</ul></div>}</>;
 }
-
-export default Initial;

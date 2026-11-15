@@ -1,34 +1,4 @@
-const About = () => {
-    return(
-        <>
-            <section id="sobre" className="min-h-screen w-full bg-[#ECEBDE] flex flex-col justify-center items-center py-8">
-                    <h1 className="text-[#C5A882] font-bodoni text-4xl font-bold py-8">Sobre nós</h1>
-                <div className="mx-4 max-w-7xl lg:mx-auto flex flex-col lg:justify-start lg:text-left">
-                    <p className="text-[#4A4A4A] mb-4 font-nunito">
-                        No <strong>Estetica CaseOne</strong>, acreditamos que o cuidado com a beleza vai além da estética:
-                        é um momento de autocuidado, confiança e renovação. 
-                        Com uma equipe altamente qualificada e apaixonada pelo que faz, 
-                        oferecemos tratamentos personalizados para realçar a sua beleza natural, 
-                        respeitando sempre a individualidade de cada cliente.
-                    </p>
-
-                    <p className="text-[#4A4A4A] mb-4 font-nunito">
-                        Nosso espaço foi cuidadosamente pensado para proporcionar um ambiente acolhedor, 
-                        confortável e sofisticado, onde cada detalhe convida você a relaxar e aproveitar a experiência ao máximo. 
-                        Trabalhamos com as melhores tecnologias, 
-                        produtos de alta qualidade e tendências inovadoras do mercado de estética para garantir resultados seguros, 
-                        eficazes e duradouros.
-                    </p>
-
-                    <p className="text-[#4A4A4A] mb-4 font-nunito">
-                        Seja para um tratamento facial, corporal ou apenas um momento de descanso, 
-                        estamos aqui para cuidar de você com profissionalismo, atenção e carinho.
-                    </p>
-
-                </div>
-            </section>
-        </>
-    )
-}
-
-export default About;
+import Image from "next/image";
+import { site } from "@/config/site";
+import { waLink } from "@/lib/whatsapp";
+export default function About() { return <section id="quem-atende" className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-2 md:items-center md:gap-16 md:px-8 md:py-24"><div className="aspect-[4/5] max-h-[600px] overflow-hidden rounded-2xl"><Image src={site.profissional.foto} alt={`Retrato ilustrativo de ${site.profissional.nome}`} width={800} height={1000} sizes="(max-width: 767px) 100vw, 50vw" className="h-full w-full object-cover" loading="lazy"/></div><div><h2 className="font-bodoni text-3xl font-bold text-escuro md:text-4xl">Quem atende</h2><h3 className="mt-5 font-bodoni text-2xl font-bold">{site.profissional.nome}</h3><p className="mt-1 font-bold text-destaque">{site.profissional.formacao}{site.profissional.registro && ` · ${site.profissional.registro}`}</p><p className="mt-5 text-lg leading-relaxed text-texto2">{site.profissional.bio}</p><a href={waLink(`Olá! Vim pelo site e quero conversar com ${site.profissional.nome}. (quem atende)`)} data-track="quem-atende-whatsapp" className="mt-7 inline-flex min-h-12 items-center rounded-md bg-destaque px-6 font-bold text-white" target="_blank" rel="noopener noreferrer">Conversar com a {site.profissional.nome}</a></div></section>; }

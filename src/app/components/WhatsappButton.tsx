@@ -1,17 +1,4 @@
-import { FaWhatsapp } from "react-icons/fa";
-
-
-const WhatsappButton = () => {
-    return(
-        <a 
-            href="https://wa.me/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full hover:scale-125 hover:border-2 transition duration-300 ease shadow-[0_0_12px_5px_rgba(231,200,195,0.7)]"
-        >
-            <FaWhatsapp size={24}/>
-        </a>
-    )
-}
-
-export default WhatsappButton;
+import { FiMessageCircle, FiMapPin } from "react-icons/fi";
+import { site } from "@/config/site";
+import { waLink } from "@/lib/whatsapp";
+export default function WhatsappButton() { return <><div className="fixed inset-x-0 bottom-0 z-50 flex min-h-14 items-center gap-1 border-t border-salvia bg-creme px-2 pb-[env(safe-area-inset-bottom)] shadow-lg md:hidden"><a href={site.agendamentoUrl || waLink("Olá! Vim pelo site e quero agendar um horário. (barra)")} data-track="barra-agendar" target="_blank" rel="noopener noreferrer" className="flex min-h-12 flex-[2] items-center justify-center rounded-md bg-destaque px-2 font-bold text-white">Agendar</a><a href={waLink("Olá! Vim pelo site e quero informações. (barra)")} data-track="barra-whatsapp" target="_blank" rel="noopener noreferrer" className="flex min-h-12 flex-1 flex-col items-center justify-center text-xs font-bold text-escuro"><FiMessageCircle size={18}/>WhatsApp</a><a href={site.mapsUrl} data-track="barra-rota" target="_blank" rel="noopener noreferrer" className="flex min-h-12 flex-1 flex-col items-center justify-center text-xs font-bold text-escuro"><FiMapPin size={18}/>Como chegar</a></div><a href={waLink("Olá! Vim pelo site e quero agendar um horário. (flutuante)")} data-track="flutuante-whatsapp" target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-40 hidden min-h-12 items-center gap-2 rounded-full bg-destaque px-6 font-bold text-white shadow-lg md:flex"><FiMessageCircle/>Agendar pelo WhatsApp</a></>; }

@@ -1,0 +1,2 @@
+import { site } from "@/config/site";
+export default function Faq() { return <section id="duvidas" className="mx-auto max-w-4xl px-5 py-16 md:px-8 md:py-24"><h2 className="font-bodoni text-3xl font-bold text-escuro md:text-4xl">Dúvidas frequentes</h2><div className="mt-7 divide-y divide-salvia">{site.faq.map(item => <details key={item.pergunta} className="group"><summary className="flex min-h-12 items-center py-3 font-bold text-escuro">{item.pergunta}</summary><p className="pb-5 text-texto2">{item.resposta}</p></details>)}</div></section>; }

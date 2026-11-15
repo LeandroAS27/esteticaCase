@@ -1,0 +1,3 @@
+import Image from "next/image";
+import { site } from "@/config/site";
+export default function Gallery() { return <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24"><h2 className="font-bodoni text-3xl font-bold text-escuro md:text-4xl">O espaço</h2><div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">{site.galeria.map(item => <figure key={item.imagem}><div className="aspect-square overflow-hidden rounded-lg"><Image src={item.imagem} alt={item.alt} width={480} height={480} sizes="(max-width: 767px) 50vw, 25vw" loading="lazy" className="h-full w-full object-cover"/></div><figcaption className="mt-2 text-sm text-texto2">{item.legenda}</figcaption></figure>)}</div></section>; }
