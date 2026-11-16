@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Nunito } from "next/font/google";
+import localFont from "next/font/local";
 import { site } from "@/config/site";
 import "./globals.css";
 
-const bodoniModa = Bodoni_Moda({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-bodoni-moda',
-});
-
-const nunito = Nunito({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-nunito',
-});
+const bodoniModa = localFont({ src: "../fonts/bodoni-latin.woff2", variable: "--font-bodoni-moda", display: "swap" });
+const nunito = localFont({ src: "../fonts/nunito-latin.woff2", variable: "--font-nunito", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
