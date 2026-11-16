@@ -17,6 +17,7 @@ export type Site = {
   faq: { pergunta: string; resposta: string }[];
   resultados: Resultado[] | null; seo: { title: string; description: string; ogImage: string };
   demo: boolean; creditosFotos: string; cnpj?: string; responsavelTecnica?: string;
+  heroImagem: string;
 };
 
 // TODO(cliente): substituir todos os dados de exemplo antes de publicar uma versão real.
@@ -47,15 +48,15 @@ export const site: Site = {
     formacao: "Formação a confirmar", // TODO(cliente): formação comprovada.
     // TODO(cliente): incluir registro profissional somente quando aplicável e comprovado.
     bio: "Sou a profissional responsável pelo atendimento. Converso com cada pessoa antes de indicar um procedimento. Este texto é um exemplo para revisão da cliente.", // TODO(cliente): bio em primeira pessoa aprovada.
-    foto: "/images/profissional.webp", // TODO(cliente): retrato real e autorizado; foto atual é ilustrativa.
+    foto: "/images/quem-atende.webp", // TODO(cliente): retrato real e autorizado; foto Pexels ilustrativa.
   },
   servicos: [
-    { id: "limpeza-pele", nome: "Limpeza de Pele", descricao: "Higienização facial feita após uma conversa sobre as necessidades da sua pele.", imagem: "/images/limpeza.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Limpeza de Pele. (serviço: Limpeza de Pele)" }, // TODO(cliente): revisar descrição e foto.
-    { id: "drenagem-linfatica", nome: "Drenagem Linfática", descricao: "Técnica de massagem manual com indicação definida em avaliação individual.", imagem: "/images/drenagem-linfatica.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Drenagem Linfática. (serviço: Drenagem Linfática)" }, // TODO(cliente): revisar descrição e foto.
-    { id: "drenagem-facial", nome: "Drenagem Facial", descricao: "Massagem facial suave planejada conforme a avaliação de cada pessoa.", imagem: "/images/drenagem-facial.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Drenagem Facial. (serviço: Drenagem Facial)" }, // TODO(cliente): revisar descrição e trocar foto de baixa resolução.
-    { id: "radiofrequencia", nome: "Radiofrequência", descricao: "Procedimento com equipamento, sujeito à avaliação e à indicação profissional.", imagem: "/images/radiofrequencia.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Radiofrequência. (serviço: Radiofrequência)" }, // TODO(cliente): revisar descrição e foto.
-    { id: "esfoliacao", nome: "Esfoliação Corporal", descricao: "Cuidado corporal cuja indicação é conversada antes do atendimento.", imagem: "/images/esfoliacao.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Esfoliação Corporal. (serviço: Esfoliação Corporal)" }, // TODO(cliente): revisar descrição e trocar foto de baixa resolução.
-    { id: "massagem-modeladora", nome: "Massagem Modeladora", descricao: "Massagem corporal com indicação individual após avaliação.", imagem: "/images/massagem-modeladora.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Massagem Modeladora. (serviço: Massagem Modeladora)" }, // TODO(cliente): revisar descrição e trocar foto de baixa resolução.
+    { id: "limpeza-pele", nome: "Limpeza de Pele", descricao: "Higienização facial feita após uma conversa sobre as necessidades da sua pele.", imagem: "/images/servico-limpeza-de-pele.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Limpeza de Pele. (serviço: Limpeza de Pele)" }, // TODO(cliente): revisar descrição e foto.
+    { id: "drenagem-linfatica", nome: "Drenagem Linfática", descricao: "Técnica de massagem manual com indicação definida em avaliação individual.", imagem: "/images/servico-drenagem-linfatica.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Drenagem Linfática. (serviço: Drenagem Linfática)" }, // TODO(cliente): revisar descrição e foto.
+    { id: "drenagem-facial", nome: "Drenagem Facial", descricao: "Massagem facial suave planejada conforme a avaliação de cada pessoa.", imagem: "/images/servico-drenagem-facial.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Drenagem Facial. (serviço: Drenagem Facial)" }, // TODO(cliente): revisar descrição e trocar foto de baixa resolução.
+    { id: "radiofrequencia", nome: "Radiofrequência", descricao: "Procedimento com equipamento, sujeito à avaliação e à indicação profissional.", imagem: "/images/servico-radiofrequencia.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Radiofrequência. (serviço: Radiofrequência)" }, // TODO(cliente): revisar descrição e foto.
+    { id: "esfoliacao", nome: "Esfoliação Corporal", descricao: "Cuidado corporal cuja indicação é conversada antes do atendimento.", imagem: "/images/servico-esfoliacao-corporal.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Esfoliação Corporal. (serviço: Esfoliação Corporal)" }, // TODO(cliente): revisar descrição e trocar foto de baixa resolução.
+    { id: "massagem-modeladora", nome: "Massagem Modeladora", descricao: "Massagem corporal com indicação individual após avaliação.", imagem: "/images/servico-massagem-modeladora.webp", mensagemWhatsapp: "Olá! Vim pelo site e quero agendar: Massagem Modeladora. (serviço: Massagem Modeladora)" }, // TODO(cliente): revisar descrição e trocar foto de baixa resolução.
   ], // TODO(cliente): revisar todos os serviços e descrições com a responsável técnica; preencher duração e preço somente se confirmados.
   passos: [
     { titulo: "Entre em contato", descricao: "Chame no WhatsApp para conversar sobre o atendimento e os horários." },
@@ -63,9 +64,10 @@ export const site: Site = {
     { titulo: "Venha ao espaço", descricao: "Compareça no horário combinado para o atendimento." },
   ], // TODO(cliente): confirmar como funciona o processo de agendamento.
   galeria: [
-    { imagem: "/images/ambiente.webp", legenda: "Ambiente ilustrativo", alt: "Ambiente de estética ilustrativo" },
-    { imagem: "/images/equipamentos.webp", legenda: "Equipamentos ilustrativos", alt: "Equipamentos de estética ilustrativos" },
-    { imagem: "/images/tratamentos.webp", legenda: "Atendimento ilustrativo", alt: "Imagem ilustrativa de atendimento estético" },
+    { imagem: "/images/galeria-sala.webp", legenda: "Ambiente ilustrativo", alt: "Ambiente de estética ilustrativo" },
+    { imagem: "/images/galeria-recepcao.webp", legenda: "Equipamentos ilustrativos", alt: "Equipamentos de estética ilustrativos" },
+    { imagem: "/images/galeria-produtos.webp", legenda: "Produtos ilustrativos", alt: "Produtos de cuidados estéticos ilustrativos" },
+    { imagem: "/images/galeria-detalhe.webp", legenda: "Detalhe ilustrativo", alt: "Detalhe de cuidados estéticos ilustrativo" },
   ], // TODO(cliente): trocar por fotos reais e autorizadas do espaço; legendas e alt.
   faq: [
     { pergunta: "Preciso de avaliação antes?", resposta: "Sim. A indicação depende de uma conversa e avaliação individual." },
@@ -81,6 +83,7 @@ export const site: Site = {
     ogImage: "/og.jpg", // TODO(cliente): imagem OG real e autorizada, 1200×630.
   },
   demo: true,
-  creditosFotos: "Imagens ilustrativas do projeto original; autoria e licença a confirmar.", // TODO(cliente): crédito e licença de cada foto ou substituir por fotos próprias.
+  heroImagem: "/images/hero.webp", // TODO(cliente): foto real e autorizada do hero; foto Pexels ilustrativa.
+  creditosFotos: "Fotos ilustrativas: Pexels License. Autores e links em CREDITS.md.", // TODO(cliente): substituir por fotos reais autorizadas para um cliente.
   // TODO(cliente): preencher CNPJ e responsável técnica quando aplicáveis e verificados.
 };
