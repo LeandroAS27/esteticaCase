@@ -9,7 +9,7 @@ export type Site = {
   whatsapp: string; telefoneExibicao: string; endereco: string; mapsUrl: string; mapsEmbedUrl: string;
   agendamentoUrl: string | null; redes: { nome: string; url: string }[];
   avaliacoes: { nota: string; total: number; url: string } | null;
-  horarios: { dia: string; horario: string }[]; confianca: string[];
+  horarios: { dia: string; horario: string; diasSchema?: string[]; abre?: string; fecha?: string }[]; confianca: string[];
   profissional: { nome: string; formacao: string; registro?: string; bio: string; foto: string };
   servicos: { id: string; nome: string; descricao: string; duracao?: string; precoAPartir?: string; imagem: string; mensagemWhatsapp: string }[];
   passos: { titulo: string; descricao: string }[];
@@ -38,16 +38,16 @@ export const site: Site = {
   redes: [], // TODO(cliente): adicionar somente perfis reais.
   avaliacoes: null, // TODO(cliente): nota, total e link do Google verificados; nunca inventar.
   horarios: [
-    { dia: "Segunda a sexta", horario: "A confirmar" },
-    { dia: "Sábado", horario: "A confirmar" },
-    { dia: "Domingo", horario: "A confirmar" },
-  ], // TODO(cliente): confirmar horários por dia.
+    { dia: "Terça a sexta", horario: "9h–19h (exemplo)", diasSchema: ["Tuesday", "Wednesday", "Thursday", "Friday"], abre: "09:00", fecha: "19:00" },
+    { dia: "Sábado", horario: "9h–15h (exemplo)", diasSchema: ["Saturday"], abre: "09:00", fecha: "15:00" },
+    { dia: "Domingo e segunda", horario: "fechado (exemplo)" },
+  ], // TODO(cliente): confirmar horários por dia; todos são exemplos fictícios.
   confianca: [], // TODO(cliente): até três credenciais ou avaliações verificadas.
   profissional: {
-    nome: "Nome da Profissional", // TODO(cliente): nome real.
-    formacao: "Formação a confirmar", // TODO(cliente): formação comprovada.
-    // TODO(cliente): incluir registro profissional somente quando aplicável e comprovado.
-    bio: "Sou a profissional responsável pelo atendimento. Converso com cada pessoa antes de indicar um procedimento. Este texto é um exemplo para revisão da cliente.", // TODO(cliente): bio em primeira pessoa aprovada.
+    nome: "Ana Exemplo", // TODO(cliente): nome real; nome fictício de exemplo.
+    formacao: "Esteticista (exemplo)", // TODO(cliente): formação comprovada; dado fictício.
+    registro: "", // TODO(cliente): incluir somente quando aplicável e comprovado.
+    bio: "Sou Ana e gosto de ouvir cada pessoa antes de conversar sobre os cuidados com a pele. Busco oferecer um atendimento tranquilo e atento às suas dúvidas.", // TODO(cliente): bio fictícia de exemplo; substituir por texto aprovado.
     foto: "/images/quem-atende.webp", // TODO(cliente): retrato real e autorizado; foto Pexels ilustrativa.
   },
   servicos: [

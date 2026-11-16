@@ -19,7 +19,7 @@ export default function Home() {
     address: { "@type": "PostalAddress", streetAddress: site.endereco, addressLocality: site.cidade, addressRegion: "SP", addressCountry: "BR" },
     telephone: site.telefoneExibicao,
     url: site.url,
-    openingHoursSpecification: site.horarios.filter(item => item.horario !== "A confirmar").map(item => ({ "@type": "OpeningHoursSpecification", dayOfWeek: item.dia, opens: item.horario })),
+    openingHoursSpecification: site.horarios.filter(item => item.abre && item.fecha && item.diasSchema).map(item => ({ "@type": "OpeningHoursSpecification", dayOfWeek: item.diasSchema, opens: item.abre, closes: item.fecha })),
   };
   return (
     <>
